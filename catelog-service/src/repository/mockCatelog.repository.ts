@@ -11,17 +11,17 @@ export class MockCatelogRepository implements ICategoryRepository{
 
     }
     update(data: Product): Promise<Product> {
-        throw new Error("Method not implemented.");
+        return Promise.resolve(data as  unknown as Product)
     }
     delete(id: any): Promise<void> {
-        throw new Error("Method not implemented.");
+        return Promise.resolve(id)
     }
-    find(): Promise<Product[]> {
-        throw new Error("Method not implemented.");
+    find(limit:number,offset:number): Promise<Product[]> {
+        return Promise.resolve([])
     }
     findOne(id: number): Promise<Product> {
-        throw new Error("Method not implemented.");
+        return Promise.resolve({id} as unknown as Product)
     }
-
+  
 }
 
