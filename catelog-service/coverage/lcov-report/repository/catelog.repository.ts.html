@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for repository/mockCatelog.repository.ts</title>
+    <title>Code coverage report for repository/catelog.repository.ts</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../prettify.css" />
     <link rel="stylesheet" href="../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">repository</a> mockCatelog.repository.ts</h1>
+        <h1><a href="../index.html">All files</a> / <a href="index.html">repository</a> catelog.repository.ts</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.92% </span>
+                <span class="strong">70.37% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>20/26</span>
+                <span class='fraction'>19/27</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/5</span>
+                <span class='fraction'>1/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.92% </span>
+                <span class="strong">70.37% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>20/26</span>
+                <span class='fraction'>19/27</span>
             </div>
         
             
@@ -89,12 +89,7 @@
 <a name='L24'></a><a href='#L24'>24</a>
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
-<a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L27'></a><a href='#L27'>27</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -109,6 +104,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -116,35 +115,33 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { ICategoryRepository } from "../interface/catelogRepository.interface";
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">import { ICategoryRepository } from "../interface/catelogRepository.interface";
 import { Product } from "../models/product.model";
-export class MockCatelogRepository implements ICategoryRepository{
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+export class CatelogRepository implements ICategoryRepository{
     create(data: Product): Promise&lt;Product&gt; {
-        const mockProduct = {
-            id:123,
-            ...data
-        } as Product
-&nbsp;
-        return Promise.resolve(mockProduct)
-&nbsp;
+        throw new Error("Method not implemented.");
     }
-    update(data: Product): Promise&lt;Product&gt; {
-        return Promise.resolve(data as  unknown as Product)
-    }
-<span class="fstat-no" title="function not covered" >    delete(id: any): Promise&lt;void&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        return Promise.resolve(id)</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >    update(data: Product): Promise&lt;Product&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error("Method not implemented.");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-<span class="fstat-no" title="function not covered" >    find(limit:number,offset:number): Promise&lt;Product[]&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        return Promise.resolve([])</span>
+&nbsp;
+<span class="fstat-no" title="function not covered" >    delete(id: any): Promise&lt;void&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error("Method not implemented.");</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+<span class="fstat-no" title="function not covered" >    find(): Promise&lt;[]&gt; {</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error("Method not implemented.");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="fstat-no" title="function not covered" >    findOne(id: number): Promise&lt;Product&gt; {</span>
-<span class="cstat-no" title="statement not covered" >        return Promise.resolve({id} as unknown as Product)</span>
+<span class="cstat-no" title="statement not covered" >        throw new Error("Method not implemented.");</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
-  
-}
 &nbsp;
-&nbsp;</pre></td></tr></table></pre>
+    
+}</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
