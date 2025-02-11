@@ -1,12 +1,14 @@
 import { ICategoryRepository } from "../interface/catelogRepository.interface";
 import { Product } from "../models/product.model";
+import { ProductFactory } from "../utils/fixtures";
 
 
 
 
 export class CatelogRepository implements ICategoryRepository{
     create(data: Product): Promise<Product> {
-        throw new Error("Method not implemented.");
+        const product = ProductFactory.build()
+        return Promise.resolve(product)
     }
 
     update(data: Product): Promise<Product> {

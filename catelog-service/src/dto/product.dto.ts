@@ -1,20 +1,30 @@
- import { IsNotEmpty, IsString, IsNumber, Min } from "class-validator";
+import { IsNotEmpty, IsString, IsNumber, Min } from "class-validator";
 
- export class CreateProductRequest {
-     @IsString()
-     @IsNotEmpty()
-     name: string;
+export class CreateProductRequest {
+  @IsString()
+  @IsNotEmpty()
+  name: string;
 
-     @IsString()
-     @IsNotEmpty()
-     description: string;
+  @IsString()
+  @IsNotEmpty()
+  description: string;
 
-     @IsNumber()
-     @IsNotEmpty()
-     @Min(10)
-     price: number;
+  @IsNumber()
+  @IsNotEmpty()
+  @Min(10)
+  price: number;
 
-     @IsNumber()
-     @IsNotEmpty()
-     stock: number;
- }
+  @IsNumber()
+  @IsNotEmpty()
+  stock: number;
+}
+
+export class UpdateProductRequest {
+  name?: string;
+
+  description?: string;
+
+  price?: number;
+
+  stock?: number;
+}
