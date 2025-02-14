@@ -1,5 +1,6 @@
 import { IsNotEmpty, IsString, IsNumber, Min } from "class-validator";
 
+
 export class CreateProductRequest {
   @IsString()
   @IsNotEmpty()

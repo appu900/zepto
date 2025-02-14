@@ -1,11 +1,24 @@
 
-POST http://localhost:8000/products
+POST  http://localhost:8000/products
 Content-Type: application/json
 
 {
-    "name":"Product name",
-    "description":"Product description",
+    "name":"ASUS tuf f15",
+    "description":"This is a good laptop with a large number of products and a large number of products",
     "price":99.99,
-    "quantity":10,
     "stock":10
 }
+
+
+# PATCH   http://localhost:8000/products/1
+# Content-Type: application/json
+
+# {
+#     "name":"ASUS tuf f15",
+#     "description":"This is a good laptop with a large number of products and a large number of products",
+#     "price":99.99,
+#     "stock":10
+# }
+
+# GET http://localhost:8000/products/1
+  
