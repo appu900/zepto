@@ -7,3 +7,8 @@ export interface ICategoryRepository {
   find(limit:number,offset:number): Promise<Product[]>;
   findOne(id: number): Promise<Product>;
 }
+
+
+export interface Cat{
+  
+}
