@@ -55,6 +55,6 @@ export class CatelogRepository implements ICategoryRepository {
     if (product) {
       return Promise.resolve(product)
     }
-    throw new Error(`Product ${id} not found`);
+    throw new Error(`Product with ${id} not found`);
   }
 }

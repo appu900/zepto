@@ -9,6 +9,3 @@ export interface ICategoryRepository {
 }
 
 
-export interface Cat{
-  
-}

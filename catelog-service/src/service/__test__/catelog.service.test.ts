@@ -18,7 +18,7 @@ const mockProduct = (rest: any) => {
     stock: faker.number.int({ min: 10, max: 1000 }),
     ...rest,
   };
-};
+};  
 
 describe("catelogService", () => {
   let repository: ICategoryRepository;
