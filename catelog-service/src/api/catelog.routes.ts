@@ -73,4 +73,25 @@ router.get(
   }
 );
 
+router.delete(
+  "/products/:id",
+  async (req: Request, res: Response, next: NextFunction) => {
+    try {
+      const id = req.params.id;
+      if (!id) {
+        res.status(404).json({
+          message: "Product with this ID not found on server",
+        });
+      }
+      const response = await catalogService.deleteProduct(parseInt(id));
+      res.status(200).json({
+        message: "Product deleted successfully",
+      });
+    } catch (error) {
+      const err = error as Error;
+      res.status(500).json(err.message);
+    }
+  }
+);
+
 export default router;

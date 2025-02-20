@@ -25,12 +25,21 @@ export class CatelogRepository implements ICategoryRepository {
   }
 
   async delete(id: any): Promise<void> {
-    const product = this._prisma.product.delete({
+    const product = await this._prisma.product.findFirst({
       where: {
         id: id,
       },
     });
-    return Promise.resolve();
+    if (product) {
+      await this._prisma.product.delete({
+        where: {
+          id: product.id,
+        },
+      });
+
+      return Promise.resolve();
+    }
+    return Promise.reject(new Error(`Product with ${id} not found`));
   }
   async find(limit: number, offset: number): Promise<Product[]> {
     return this._prisma.product.findMany({
@@ -53,7 +62,7 @@ export class CatelogRepository implements ICategoryRepository {
       },
     });
     if (product) {
-      return Promise.resolve(product)
+      return Promise.resolve(product);
     }
     throw new Error(`Product with ${id} not found`);
   }
