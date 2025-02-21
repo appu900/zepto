@@ -14,6 +14,7 @@ export class CatelogService {
     }
     return product;
   }
+
   async updateProduct(input: any) {
     const data = await this._repository.update(input);
     //  emit event to update record in elasticsearch
@@ -25,6 +26,7 @@ export class CatelogService {
     const products = await this._repository.find(limit, offset);
     return products;
   }
+
   async getProduct(id: number) {
     const product = await this._repository.findOne(id);
     return product;
