@@ -16,7 +16,7 @@ router.post(
         CreateProductRequest,
         req.body
       );
-      if (errors) { 
+      if (errors) {
         res.status(400).json({ errors });
       }
       const data = await catalogService.createProduct(input);
@@ -96,4 +96,4 @@ router.delete(
 export default router;
 
 
-// thiss is done 
+
