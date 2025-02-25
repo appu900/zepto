@@ -36,6 +36,8 @@ router.delete("/cart", async (req, res) => {
   });
 });
 
+const username = "appu"
+
 export default router;
 
 
