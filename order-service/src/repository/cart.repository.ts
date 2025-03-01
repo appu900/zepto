@@ -1,14 +1,12 @@
 import { DB } from "../db/db.connection";
 import { carts } from "../db/schema";
+import { CartRequestInput } from "../dto/cartRequest.dto";
 import { CartRepositoryType } from "../types/repository.type";
 
-const createCart = async (input: any): Promise<{}> => {
+const createCart = async (input: CartRequestInput): Promise<{}> => {
   const result = await DB.insert(carts)
-    .values({
-      customerId: 123,
-    })
+    .values(input)
     .returning({ cartID: carts.id });
-  console.log("Result", result);
   return Promise.resolve({
     message: "Cart created sucessfully",
     result,
@@ -33,5 +31,3 @@ export const CartRepository: CartRepositoryType = {
   update: updateCart,
   delete: deleteCart,
 };
-
-
