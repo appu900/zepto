@@ -38,7 +38,7 @@ router.patch(
       res.status(200).json(data);
     } catch (error) {
       const err = error as Error;
-      res.status(500).json(err.message);
+      return next(err)
     }
   }
 );
@@ -66,8 +66,7 @@ router.get(
       const data = await catalogService.getProduct(id);
       res.status(200).json(data);
     } catch (error) {
-      const err = error as Error;
-      res.status(500).json(err.message);
+      return next(error);
     }
   }
 );

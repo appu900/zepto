@@ -43,3 +43,8 @@ export class NotFoundError extends BaseError {
   }
 }
 
+export class ResourceNotFoundError extends BaseError {
+  constructor(message = "resource not found") {
+    super("ResourceNotFoundError", StatusCodes.NOT_FOUND, message);
+  }
+}

@@ -1,6 +1,19 @@
+import axios from "axios";
+import { APIError } from "../error/errors";
+import { logger } from "../logger";
+import { Product } from "../../dto/product.dto";
+const CATELOG_BASE_URL = "http://localhost:8000";
+
 export const GetProductDetails = async (productId: number) => {
-  return {
-    Stock: 10,
-    price: 100,
-  };
+  try {
+    const response = await axios.get(
+      `${CATELOG_BASE_URL}/products/${productId}`
+    );
+    const product = response.data;
+    console.log("fetched the product", product);
+    return product as Product;
+  } catch (error) {
+    logger.error(error);
+    throw new APIError("Product not found");
+  }
 };
