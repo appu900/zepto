@@ -14,4 +14,4 @@ export const CartEditRequestSchema = Type.Object({
   qty: Type.Integer(),
 });
 
-export type CartEditRequestInput = Static<typeof CartRequestSchema>;
+export type CartEditRequestInput = Static<typeof CartEditRequestSchema>;

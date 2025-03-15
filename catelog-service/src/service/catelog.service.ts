@@ -1,3 +1,4 @@
+import { CreateProductRequest } from "../dto/product.dto";
 import { ICategoryRepository } from "../interface/catelogRepository.interface";
 
 export class CatelogService {
@@ -7,7 +8,7 @@ export class CatelogService {
     this._repository = repository;
   }
 
-  async createProduct(input: any) {
+  async createProduct(input: CreateProductRequest) {
     const product = await this._repository.create(input);
     if (!product.id) {
       throw new Error("unable to create product");

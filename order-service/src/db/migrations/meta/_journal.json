@@ -8,6 +8,13 @@
       "when": 1740407078619,
       "tag": "0000_spotty_mastermind",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1742040942507,
+      "tag": "0001_boring_killmonger",
+      "breakpoints": true
     }
   ]
 }

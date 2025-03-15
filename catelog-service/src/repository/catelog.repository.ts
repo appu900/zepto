@@ -1,5 +1,6 @@
 import { ICategoryRepository } from "../interface/catelogRepository.interface";
 import { Product } from "../models/product.model";
+import { NotFoundError } from "../utils";
 import { ProductFactory } from "../utils/fixtures";
 import { PrismaClient } from "@prisma/client";
 
@@ -11,7 +12,13 @@ export class CatelogRepository implements ICategoryRepository {
   }
   async create(data: Product): Promise<Product> {
     return this._prisma.product.create({
-      data: data,
+      data: {
+        name: data.name,
+        description: data.description,
+        price: data.price,
+        stock: data.stock,
+        variant: data.variant || "",
+      },
     });
   }
 
@@ -64,6 +71,6 @@ export class CatelogRepository implements ICategoryRepository {
     if (product) {
       return Promise.resolve(product);
     }
-    throw new Error(`Product with ${id} not found`);
+    throw new NotFoundError("Product not found");
   }
 }

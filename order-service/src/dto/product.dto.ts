@@ -3,4 +3,5 @@ export interface Product {
   stock: number;
   name: string;
   price: number;
+  variant:string;
 }

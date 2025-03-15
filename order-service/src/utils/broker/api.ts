@@ -12,8 +12,9 @@ export const GetProductDetails = async (productId: number) => {
     const product = response.data;
     console.log("fetched the product", product);
     return product as Product;
-  } catch (error) {
+  } catch (error:any) {
     logger.error(error);
+    const errorMessage = error.message
     throw new APIError("Product not found");
   }
 };
