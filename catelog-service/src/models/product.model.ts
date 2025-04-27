@@ -8,3 +8,6 @@ export class Product {
     public readonly variant?: string
   ) {}
 }
+
+
+

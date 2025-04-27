@@ -21,3 +21,6 @@ export type MessageBrokerType = {
   disconnectConsumer: () => Promise<void>;
   subscribe: (messageHandler: MessageHandler, topic: TOPIC_TYPE) => Promise<void>;
 };
+
+
+

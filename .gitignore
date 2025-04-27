@@ -1,2 +1,4 @@
 ./db/db_data
 node_modules
+.qodo
+authService/node_modules
